@@ -53,7 +53,7 @@ start_query_node() {
     export DISABLE_BLOCK_INGESTOR=true
     graph-node \
         --postgres-url "$postgres_url" \
-        --ethereum-rpc $ethereum \
+        --ethereum-ws $ethereum \
         --ipfs "$ipfs"
 }
 
@@ -67,14 +67,14 @@ start_index_node() {
     graph-node \
 	    --node-id "${node_id//-/_}" \
 	    --postgres-url "$postgres_url" \
-	    --ethereum-rpc $ethereum \
+	    --ethereum-ws $ethereum \
 	    --ipfs "$ipfs"
 }
 
 start_combined_node() {
     graph-node \
         --postgres-url "$postgres_url" \
-        --ethereum-rpc $ethereum \
+        --ethereum-ws $ethereum \
         --ipfs "$ipfs"
 }
 
